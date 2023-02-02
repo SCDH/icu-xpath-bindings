@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>de.wwu.scdh</groupId>
+   <artifactId>icu-xpath-bindings</artifactId>
+   <version>0.1.0</version>
+
+   <name>ICU XPath Bindings</name>
+   <url>https://github.com/scdh/icu-xpath-bindings</url>
+
+   <developers>
+      <developer>
+         <name>Christian Lück</name>
+         <organization>SCDH, University of Münster</organization>
+      </developer>
+   </developers>
+
+   <licenses>
+      <license>
+         <name>MIT License</name>
+         <url>https://opensource.org/licenses/mit-license.php</url>
+      </license>
+   </licenses>
+
+   <scm>
+      <connection>scm:git:https://github.com/scdh/icu-xpath-bindings.git</connection>
+      <developerConnection>scm:git:https://github.com/scdh/icu-xpath-bindings.git</developerConnection>
+      <url>scm:git:https://github.com/scdh/icu-xpath-bindings.git</url>
+      <tag>HEAD</tag>
+   </scm>
+
+   <properties>
+      <maven.compiler.source>11</maven.compiler.source>
+      <maven.compiler.target>11</maven.compiler.target>
+      <maven.compiler.source>1.8</maven.compiler.source>
+      <maven.compiler.target>1.8</maven.compiler.target>
+      <slf4j.version>1.7.32</slf4j.version>
+      <saxon.version>10.8</saxon.version>
+      <junit.version>5.7.2</junit.version>
+      <icu4j.version>72.1</icu4j.version>
+   </properties>
+
+   <dependencies>
+      <dependency>
+         <groupId>net.sf.saxon</groupId>
+         <artifactId>Saxon-HE</artifactId>
+         <version>${saxon.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-api</artifactId>
+         <version>${slf4j.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter-api</artifactId>
+         <version>${junit.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter-engine</artifactId>
+         <version>${junit.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+	 <groupId>com.ibm.icu</groupId>
+	 <artifactId>icu4j</artifactId>
+	 <version>${icu4j.version}</version>
+      </dependency>
+      <dependency>
+	 <groupId>com.ibm.icu</groupId>
+	 <artifactId>icu4j-charset</artifactId>
+	 <version>${icu4j.version}</version>
+      </dependency>
+      <dependency>
+	 <groupId>com.ibm.icu</groupId>
+	 <artifactId>icu4j-localespi</artifactId>
+	 <version>${icu4j.version}</version>
+      </dependency>
+   </dependencies>
+
+
+   <build>
+      <plugins>
+      </plugins>
+   </build>
+
+</project>
