@@ -26,5 +26,7 @@ where
 
 ## Further Reading
 
+- [extension functions](https://www.saxonica.com/html/documentation11/extensibility/extension-functions-J/ext-full-J.html)
+
 - [strip accents with ICU
   transliterator](https://stackoverflow.com/questions/2992066/code-to-strip-diacritical-marks-using-icu)
