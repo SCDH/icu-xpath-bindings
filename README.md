@@ -14,12 +14,14 @@ bound to this namespace:
 ```{xpath}
 icu:normalize(input as xs:string, normalizer as xs:string, mode as xs:string) as xs:string
 ```
-where `input` is your input string to be normalized, and where
-`normalizer` is the abbreviated name one of the normalizers
-described in the [ICU normalize
-docs](https://unicode-org.github.io/icu/userguide/transforms/normalization/),
-e.g. `nfc`; and where `mode` is one of `decompose`, `compose`,
-`compose_contiguous` or `fcd`, as described in the referenced docs.
+where
+- `input` is your input string to be normalized
+- `normalizer` is the abbreviated name one of the normalizers
+  described in the [ICU normalize
+  docs](https://unicode-org.github.io/icu/userguide/transforms/normalization/),
+  e.g. `nfc`
+- `mode` is one of `decompose`, `compose`, `compose_contiguous` or
+  `fcd`, as described in the referenced docs.
 
 
 ## Further Reading
