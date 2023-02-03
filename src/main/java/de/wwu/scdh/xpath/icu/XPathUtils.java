@@ -16,7 +16,7 @@ public class XPathUtils {
      * @return a {@link String}
      */
     public static String getStringArgument(Sequence arg) {
-	StringValue inputValue = (StringValue) arg;
+	StringValue inputValue = (StringValue) arg.materialize();
 	return ((AtomicValue) inputValue).toString();
     }
 }
