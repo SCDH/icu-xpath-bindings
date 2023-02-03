@@ -9,9 +9,8 @@ import org.junit.jupiter.api.Disabled;
 import net.sf.saxon.lib.ExtensionFunctionDefinition;
 import net.sf.saxon.lib.ExtensionFunctionCall;
 import net.sf.saxon.om.Sequence;
-import net.sf.saxon.value.StringValue;
 import net.sf.saxon.trans.XPathException;
-import net.sf.saxon.ma.arrays.SimpleArrayItem;
+import net.sf.saxon.om.SequenceIterator;
 
 public class TransliteratorIdsTest {
 
@@ -25,12 +24,11 @@ public class TransliteratorIdsTest {
 
     @Test
     public void testTranslitertorIds() throws XPathException {
-	String input = "";
 	Sequence[] arguments = new Sequence[] {};
 	Sequence output = function.call(null, arguments);
-	SimpleArrayItem array = (SimpleArrayItem) output;
-	// assert that we have IDs
-	assertTrue(array.arrayLength() > 0);
+	SequenceIterator iter = output.iterate();
+	// assert that we have at least one ID
+	assertNotNull(iter.next());;
     }
 
 }

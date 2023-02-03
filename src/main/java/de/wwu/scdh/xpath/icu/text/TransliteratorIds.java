@@ -1,7 +1,6 @@
 package de.wwu.scdh.xpath.icu.text;
 
 import java.util.Collections;
-import java.util.ArrayList;
 import java.util.List;
 
 import net.sf.saxon.lib.ExtensionFunctionDefinition;
@@ -12,8 +11,8 @@ import net.sf.saxon.om.Sequence;
 import net.sf.saxon.trans.XPathException;
 import net.sf.saxon.expr.XPathContext;
 import net.sf.saxon.value.StringValue;
-import net.sf.saxon.ma.arrays.SimpleArrayItem;
 import net.sf.saxon.om.GroundedValue;
+import net.sf.saxon.om.EmptyAtomicSequence;
 
 import com.ibm.icu.text.Transliterator;
 
@@ -76,11 +75,12 @@ public class TransliteratorIds extends ExtensionFunctionDefinition {
 		int size = ids.size();
 		LOG.debug("This version of ICU provides {} transliterators", size);
 
-		List<GroundedValue> idValues = new ArrayList<GroundedValue>();
+		// make a sequence of xs:string values
+		GroundedValue output = EmptyAtomicSequence.getInstance();
 		for (int i = 0; i < size; i++) {
-		    idValues.add(new StringValue(ids.get(i)));
+		    output = output.concatenate(new StringValue(ids.get(i)));
 		}
-		return new SimpleArrayItem(idValues);
+		return output;
 	    }
 	};
     }
