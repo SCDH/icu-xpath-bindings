@@ -5,11 +5,16 @@ This project provides XPath bindings of the
 Unicode. It can be used in the [Saxon
 XSLT/XQuery](https://www.saxonica.com) processor.
 
-## Functions
+## Namespace
 
 The namespace name of the XPath extension functions is
 `https://unicode-org.github.io/icu/`. We are using the prefix `icu`
-bound to this namespace:
+bound to this namespace in the following section:
+`xmlns:icu="https://unicode-org.github.io/icu/"`
+
+## Functions
+
+### Normalize
 
 ```{xpath}
 icu:normalize(input as xs:string, normalizer as xs:string, mode as xs:string) as xs:string
@@ -22,6 +27,17 @@ where
   e.g. `nfc`
 - `mode` is one of `decompose`, `compose`, `compose_contiguous` or
   `fcd`, as described in the referenced docs.
+
+### Transliterate
+
+```{xpath}
+icu:transliterator-ids() as xs:string*
+```
+
+Returns a sequence of IDs of the available
+[transliterators](https://unicode-org.github.io/icu/userguide/transforms/general/#icu-transliterators). Bound
+to
+[`Transliterator.getAvailableIds()`](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/text/Transliterator.html#getAvailableIDs--).
 
 
 ## Further Reading
