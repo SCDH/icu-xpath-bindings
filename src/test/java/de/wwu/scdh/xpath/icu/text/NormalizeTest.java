@@ -1,5 +1,10 @@
 package de.wwu.scdh.xpath.icu.text;
 
+import java.nio.file.Paths;
+import java.io.ByteArrayOutputStream;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,8 +16,13 @@ import net.sf.saxon.lib.ExtensionFunctionCall;
 import net.sf.saxon.om.Sequence;
 import net.sf.saxon.value.StringValue;
 import net.sf.saxon.trans.XPathException;
+import net.sf.saxon.s9api.*;
+
+import de.wwu.scdh.xpath.icu.IcuXPathFunctionRegistry;
 
 public class NormalizeTest {
+
+    private static final String XSLT = Paths.get("src", "test", "resources", "xsl", "normalize.xsl").toFile().toString();
 
     protected ExtensionFunctionCall normalizer;
 
@@ -111,6 +121,26 @@ public class NormalizeTest {
 	StringValue output = (StringValue) normalizer.call(null, arguments);
 	// the composed string is as long as the input string which has a composed character
 	assertEquals(input.length(), output.getContent().length());
+    }
+
+    @Test
+    public void testInXslt() throws SaxonApiException {
+	// set up processor and register extension functions
+	Processor processor = new Processor(false);
+	IcuXPathFunctionRegistry.register(processor);
+
+	Source stylesheet = new StreamSource(XSLT);
+	XsltCompiler compiler = processor.newXsltCompiler();
+	XsltExecutable executable = compiler.compile(stylesheet);
+	Xslt30Transformer transformer = executable.load30();
+
+	String sourceFile = Paths.get("src", "test", "resources", "samples", "french.xml").toFile().toString();
+	Source source = new StreamSource(sourceFile);
+
+	ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+	transformer.transform(source, processor.newSerializer(outputStream));
+
+	assertEquals("Parlez vous français?".length() + 1, outputStream.toString().length());
     }
 
 }
