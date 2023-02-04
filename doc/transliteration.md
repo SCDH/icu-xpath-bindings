@@ -1,4 +1,4 @@
-## Transliteration
+# Transliteration
 
 Transliterations are very powerful. ICU first used them to
 transliterate from one script to another, e.g. from Latin script to
@@ -6,7 +6,7 @@ Arabic script. But it can do much more, e.g. decomposing compound
 characters, removing some diacritics, and re-composing characters.
 
 
-### `icu:transliterate`
+## `icu:transliterate`
 
 ```{xpath}
 icu:transliterate(input as xs:string, transliterator-ID as xs:string) as xs:string
@@ -26,7 +26,7 @@ Bound to
 [`Transliterator.getInstance()`](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/text/Transliterator.html#getInstance-java.lang.String-).
 
 
-### `icu:transliterator-ids`
+## `icu:transliterator-ids`
 
 ```{xpath}
 icu:transliterator-ids() as xs:string*
