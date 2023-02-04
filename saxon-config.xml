@@ -10,6 +10,7 @@ http://www.saxonica.com/documentation/index/configuration-file.html
    <resources>
       <!-- register the extension functions -->
       <extensionFunction>de.wwu.scdh.xpath.icu.text.Normalize</extensionFunction>
+      <extensionFunction>de.wwu.scdh.xpath.icu.text.Transliterate</extensionFunction>
       <extensionFunction>de.wwu.scdh.xpath.icu.text.TransliteratorIds</extensionFunction>
    </resources>
 
