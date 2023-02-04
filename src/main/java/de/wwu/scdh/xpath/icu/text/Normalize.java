@@ -17,7 +17,7 @@ import com.ibm.icu.text.Normalizer2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+import de.wwu.scdh.xpath.icu.XPathUtils;
 import de.wwu.scdh.xpath.icu.IcuXPathFunctionRegistry;
 
 
@@ -70,46 +70,47 @@ public class Normalize extends ExtensionFunctionDefinition {
 	    @Override
 	    public Sequence call(XPathContext context, Sequence[] arguments)
 		throws XPathException {
-		LOG.debug("xsl:normalize() called");
 
-		// get input string from argument
-		StringValue inputValue = (StringValue) arguments[0];
-		String input = ((AtomicValue) inputValue).toString();
-
-		// get normalizer name from argument
-		StringValue normalizerNameValue = (StringValue) arguments[1];
-		String normalizerName = ((AtomicValue) normalizerNameValue).toString();
-
-		// get normalizer mode from argument
-		Normalizer2.Mode mode = null;
-		StringValue modeValue = (StringValue) arguments[2];
-		String modeString = ((AtomicValue) modeValue).toString();
-		if (modeString.equals("compose")) {
-		    mode = Normalizer2.Mode.COMPOSE;
-		} else if (modeString.equals("compose_contiguous")) {
-		    mode = Normalizer2.Mode.COMPOSE_CONTIGUOUS;
-		} else if (modeString.equals("decompose")) {
-		    mode = Normalizer2.Mode.DECOMPOSE;
-		} else if (modeString.equals("fcd")) {
-		    mode = Normalizer2.Mode.FCD;
-		} else {
-		    throw new XPathException("illegal mode for icu:normalize() function: " + modeString);
-		}
-		LOG.debug("evaluating xsl:normalize({}, {}, {})",
-			  inputValue.toShortString(), normalizerName, mode.toString());
-
-		// create normalizer instance
-		Normalizer2 normalizer;
 		try {
+		    // cast arguments
+		    String input = XPathUtils.getStringArgument(arguments[0]);
+		    String normalizerName = XPathUtils.getStringArgument(arguments[1]);
+		    String modeString = XPathUtils.getStringArgument(arguments[2]);
+
+		    LOG.debug("evaluating xsl:normalize({}, {}, {})",
+			      input, normalizerName, modeString);
+
+		    // get normalizer mode from argument
+		    Normalizer2.Mode mode = null;
+		    if (modeString.equals("compose")) {
+			mode = Normalizer2.Mode.COMPOSE;
+		    } else if (modeString.equals("compose_contiguous")) {
+			mode = Normalizer2.Mode.COMPOSE_CONTIGUOUS;
+		    } else if (modeString.equals("decompose")) {
+			mode = Normalizer2.Mode.DECOMPOSE;
+		    } else if (modeString.equals("fcd")) {
+			mode = Normalizer2.Mode.FCD;
+		    } else {
+			throw new XPathException("illegal mode for icu:normalize() function: " + modeString);
+		    }
+
+		    // create normalizer instance
+		    Normalizer2 normalizer;
 		    normalizer = Normalizer2.getInstance(null, normalizerName, mode);
+
+		    // normalize the input string
+		    String normalized = normalizer.normalize(input);
+
+		    return new StringValue(normalized);
+		} catch (IndexOutOfBoundsException e) {
+		    throw new XPathException("wrong number of arguments for icu:normalize(), requires "
+					     + this.getDefinition().getArgumentTypes().length,
+					     e);
 		} catch (MissingResourceException e) {
-		    throw new XPathException("illegal normalizer for icu:normalize() function: " + normalizerName);
+		    throw new XPathException("illegal normalizer for icu:normalize() function: "
+					     + ((StringValue) arguments[1].materialize()).toString(),
+					     e);
 		}
-
-		// normalize the input string
-		String normalized = normalizer.normalize(input);
-
-		return new StringValue(normalized);
 	    }
 	};
     }

@@ -12,7 +12,7 @@
    <xsl:param name="normalizer" as="xs:string" select="'nfc'"/>
 
    <xsl:template match="text()">
-      <xsl:value-of select="icu:normalize(xs:string(.), $normalizer, $mode)"/>
+      <xsl:value-of select="icu:normalize(., $normalizer, $mode)"/>
    </xsl:template>
 
 </xsl:stylesheet>
