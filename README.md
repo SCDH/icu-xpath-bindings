@@ -14,55 +14,31 @@ bound to this namespace in the following section:
 
 ## Functions
 
-### Normalize
+- [`icu:normalize(input as xs:string, normalizer as xs:string, mode as xs:string) as xs:string`](doc/normalization.md)
+- [`icu:transliterate(input as xs:string, transliterator-ID as xs:string) as xs:string`](doc/transliteration.md)
+- [`icu:transliterator-ids() as xs:string*`](doc/transliteration.md)
 
-```{xpath}
-icu:normalize(input as xs:string, normalizer as xs:string, mode as xs:string) as xs:string
-```
-Returns the `input` string in an equivalent, but normalized form.
+## Usage
 
-Arguments:
-- `input` is your input string to be normalized
-- `normalizer` is the abbreviated name one of the normalizers
-  described in the [ICU normalize
-  docs](https://unicode-org.github.io/icu/userguide/transforms/normalization/),
-  e.g. `nfc`
-- `mode` is one of `decompose`, `compose`, `compose_contiguous` or
-  `fcd`, as described in the referenced docs.
+Two things are necessary:
 
-See [ICU
-documentation](https://unicode-org.github.io/icu/userguide/transforms/normalization/). Bound
-to
-[`Normalizer2.getInstance()`](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/text/Normalizer2.html#getInstance-java.io.InputStream-java.lang.String-com.ibm.icu.text.Normalizer2.Mode-).
+1. Tell Saxon that there are XPath functions. This can be done via a
+   [Saxon configuration file](). Such a configuration is in
+   [`saxon-config.xml`](saxon-config.xml). You can use it from the
+   Saxon command line interface via the argument `-config
+   saxon-config.xml`. When using Java, you should also have a look at
+   the
+   [`IcuXPathFunctionRegistry.register(Processor)`](src/main/java/de/wwu/scdh/xpath/icu/IcuXPathFunctionRegistry.java).
 
-### Transliterate
+2. Provide a jar file to the classpath, so that the java classes that
+   define the functions are available to Saxon. Dependency packages
+   like ICU4J also have to be included into the classpath.
 
-```{xpath}
-icu:transliterate(input as xs:string, transliterator-ID as xs:string) as xs:string
-```
-Transliterates the input string with a ICU transliterator.
-
-Arguments:
-- `input` is your input string to be transliterated
-- `transliterator-ID` is the ID of a transliterator or a sequence of
-  IDs separated with semicolon, e.g. `NFD; [:nonspacing mark:] Remove;
-  NFC` for removing diacritics
-
-See [ICU
-documentation](https://unicode-org.github.io/icu/userguide/transforms/general/). Bound
-to
-[`Transliterator.getInstance()`](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/text/Transliterator.html#getInstance-java.lang.String-).
-
-
-```{xpath}
-icu:transliterator-ids() as xs:string*
-```
-
-Returns a sequence of IDs of the available
-[transliterators](https://unicode-org.github.io/icu/userguide/transforms/general/#icu-transliterators).
-
-Bound to
-[`Transliterator.getAvailableIds()`](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/text/Transliterator.html#getAvailableIDs--).
+Note, that the dependency packages are present in `target/lib/` after
+you have run `mvn package`. After running this command, there will
+also be a shell script `xslt.sh` which is a shell wrapper around Saxon
+that sets the class path correctly. You can take it as an example for
+setting the classpath.
 
 
 ## Further Reading
