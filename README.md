@@ -1,22 +1,31 @@
 # ICU XPath Bindings
 
 This project provides XPath bindings of the
-[ICU](https://unicode-org.github.io/icu/) Java library for processing
-Unicode. It can be used in the [Saxon
-XSLT/XQuery](https://www.saxonica.com) processor.
+[ICU](https://unicode-org.github.io/icu/) library for processing
+common Unicode tasks. It uses the ICU library for Java (ICU4J) and can
+be used in the [Saxon XSLT/XQuery](https://www.saxonica.com)
+processor.
 
-## Namespace
+The bindings only use a small set of the ICU library. Other parts may
+be added in future, if they are needed. The binding provides functions
+for the following tasks:
 
-The namespace name of the XPath extension functions is
-`https://unicode-org.github.io/icu/`. We are using the prefix `icu`
-bound to this namespace in the following section:
-`xmlns:icu="https://unicode-org.github.io/icu/"`
+- normalization
+- transliteration
 
 ## Functions
 
-- [`icu:normalize(input as xs:string, normalizer as xs:string, mode as xs:string) as xs:string`](doc/normalization.md)
-- [`icu:transliterate(input as xs:string, transliterator-ID as xs:string) as xs:string`](doc/transliteration.md)
-- [`icu:transliterator-ids() as xs:string*`](doc/transliteration.md)
+The namespace name of the XPath extension functions is
+`https://unicode-org.github.io/icu/`. In this documentation, we are
+using the prefix `icu` bound to this namespace:
+`xmlns:icu="https://unicode-org.github.io/icu/"`.
+
+- normalization
+  - [`icu:normalize(input as xs:string, normalizer as xs:string, mode as xs:string) as xs:string`](doc/normalization.md)
+- transliteration
+  - [`icu:transliterate(input as xs:string, transliterator-ID as xs:string) as xs:string`](doc/transliteration.md)
+  - [`icu:transliterator-ids() as xs:string*`](doc/transliteration.md)
+
 
 ## Usage
 
