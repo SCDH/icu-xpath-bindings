@@ -31,7 +31,7 @@ Arguments:
   `fcd`, as described in the referenced docs.
 
 See [ICU
-documentation](](https://unicode-org.github.io/icu/userguide/transforms/normalization/). Bound
+documentation](https://unicode-org.github.io/icu/userguide/transforms/normalization/). Bound
 to
 [`Normalizer2.getInstance()`](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/text/Normalizer2.html#getInstance-java.io.InputStream-java.lang.String-com.ibm.icu.text.Normalizer2.Mode-).
 
@@ -49,7 +49,7 @@ Arguments:
   NFC` for removing diacritics
 
 See [ICU
-documentation](](https://unicode-org.github.io/icu/userguide/transforms/general/). Bound
+documentation](https://unicode-org.github.io/icu/userguide/transforms/general/). Bound
 to
 [`Transliterator.getInstance()`](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/text/Transliterator.html#getInstance-java.lang.String-).
 
