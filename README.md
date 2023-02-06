@@ -21,10 +21,12 @@ using the prefix `icu` bound to this namespace:
 `xmlns:icu="https://unicode-org.github.io/icu/"`.
 
 - normalization
-  - [`icu:normalize(input as xs:string, normalizer as xs:string, mode as xs:string) as xs:string`](doc/normalization.md)
+  - [`icu:normalize(input as xs:string, normalizer as xs:string, mode as xs:string) as xs:string`](doc/normalization.md#icunormalize)
 - transliteration
-  - [`icu:transliterate(input as xs:string, transliterator-ID as xs:string) as xs:string`](doc/transliteration.md)
-  - [`icu:transliterator-ids() as xs:string*`](doc/transliteration.md)
+  - [`icu:transliterate(input as xs:string, transliterator-ID as
+    xs:string) as xs:string`](doc/transliteration.md#icutransliterate)
+  - [`icu:transliterator-from-rules(ID as xs:string, rules as xs:string, direction as xs:string) as xs:boolean`](doc/transliteration.md#icutransliterator-from-rules)
+  - [`icu:transliterator-ids() as xs:string*`](doc/transliteration.md#icutransliterator-ids)
 
 
 ## Usage
