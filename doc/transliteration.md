@@ -59,3 +59,51 @@ Returns a sequence of IDs of the available
 
 Bound to
 [`Transliterator.getAvailableIds()`](https://unicode-org.github.io/icu-docs/apidoc/released/icu4j/com/ibm/icu/text/Transliterator.html#getAvailableIDs--).
+
+
+## Examples
+
+### Removal of Diacritics
+
+Here's an XSLT stylesheet that outputs plain text and removes
+diacritics from all characters in the text nodes:
+
+```{xsl}
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:icu="https://unicode-org.github.io/icu/"
+    version="2.0">
+
+   <xsl:output method="text"/>
+
+   <xsl:param name="transliterator" as="xs:string" select="'NFD; [:nonspacing mark:] Remove; NFC'"/>
+
+   <xsl:template match="text()">
+      <xsl:value-of select="icu:transliterate(., $transliterator)"/>
+   </xsl:template>
+
+</xsl:stylesheet>
+```
+
+Applied on the following XML source file it outputs: `Parlez vous
+francais?`, francais without the cedilla:
+
+```{xml}
+<t>Parlez vous français?</t>
+```
+
+The important part is the compound transliterator `'NFD; [:nonspacing
+mark:] Remove; NFC`. It consists of 3 transliterators.
+
+The first one, `NFD` normalizes the input by decomposing compound
+characters. The result is that c with the cedilla result in two
+unicode characters. The bare cedilla is a non-spacing character.
+
+The second one, `Remove` is applied only on non-spacing characters. So
+the result of this step is the string with the cedilla removed.
+
+The third one, `NFC` normalizes by (re-)composing characters and
+non-spacing characters again. – We could have applied the removal only
+onto a subset of non-spacing characters.
