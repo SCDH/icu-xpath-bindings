@@ -68,7 +68,7 @@ Bound to
 Here's an XSLT stylesheet that outputs plain text and removes
 diacritics from all characters in the text nodes:
 
-```{xsl}
+```{xslt}
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
