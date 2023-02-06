@@ -107,3 +107,8 @@ the result of this step is the string with the cedilla removed.
 The third one, `NFC` normalizes by (re-)composing characters and
 non-spacing characters again. – We could have applied the removal only
 onto a subset of non-spacing characters.
+
+A common use case of such stripping diacritics include sorting in
+lexical order or matching strings against a list of strings where
+diacritics are not consistently used. In both cases stripping
+diacritics improves the result.
