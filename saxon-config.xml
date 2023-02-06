@@ -12,6 +12,7 @@ http://www.saxonica.com/documentation/index/configuration-file.html
       <extensionFunction>de.wwu.scdh.xpath.icu.text.Normalize</extensionFunction>
       <extensionFunction>de.wwu.scdh.xpath.icu.text.Transliterate</extensionFunction>
       <extensionFunction>de.wwu.scdh.xpath.icu.text.TransliteratorIds</extensionFunction>
+      <extensionFunction>de.wwu.scdh.xpath.icu.text.TransliteratorFromRules</extensionFunction>
    </resources>
 
 </configuration>

@@ -36,6 +36,7 @@ public class IcuXPathFunctionRegistry {
 	processor.registerExtensionFunction(new de.wwu.scdh.xpath.icu.text.Normalize());
 	processor.registerExtensionFunction(new de.wwu.scdh.xpath.icu.text.Transliterate());
 	processor.registerExtensionFunction(new de.wwu.scdh.xpath.icu.text.TransliteratorIds());
+	processor.registerExtensionFunction(new de.wwu.scdh.xpath.icu.text.TransliteratorFromRules());
     }
 
 }
