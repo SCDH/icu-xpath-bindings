@@ -112,3 +112,85 @@ A common use case of such stripping diacritics include sorting in
 lexical order or matching strings against a list of strings where
 diacritics are not consistently used. In both cases stripping
 diacritics improves the result.
+
+Such a matching case in an upcycling task was the reason why this
+library was first developed.
+
+### A Custom Transliterator
+
+You can define your own transliterator, register it under an ID, and
+then use it in subsequent calls to transliterate strings. Here comes a
+somewhat constructed example, maybe usable for an author that wants to
+write a novel without e. He's not good as [Georges
+Perec](https://en.wikipedia.org/wiki/A_Void), because it sails around
+the e quite mechanically...
+
+```{xslt}
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:icu="https://unicode-org.github.io/icu/"
+    version="2.0">
+
+   <xsl:output method="text"/>
+
+   <xsl:param name="transliterator" as="xs:string" select="'custom'"/>
+
+   <xsl:param name="rules" as="xs:string" required="true"/>
+
+   <xsl:param name="direction" as="xs:string" select="'forward'"/>
+
+   <xsl:template match="/">
+      <xsl:variable name="transliterator" select="icu:transliterator-from-rules('custom', unparsed-text($rules), $direction)"/>
+      <xsl:apply-templates/>
+   </xsl:template>
+
+   <xsl:template match="text()">
+      <xsl:value-of select="icu:transliterate(., $transliterator)"/>
+   </xsl:template>
+
+</xsl:stylesheet>
+```
+
+He uses an external file named `void.txt` with rules for the `custom`
+transliterator:
+
+```{txt}
+e > a;
+```
+
+He translates his novel
+
+
+```{xml}
+<t>Cette été ...</t>
+```
+
+Now, running the following command
+
+```{shell}
+./xslt.sh -config:saxon-config.xml -xsl:doc/transliterator-from-external-rules.xsl -s:doc/novel.xml rules=void.txt transliterator="NFD;custom;NFC"
+```
+
+results in
+
+```{xml}
+Catta átá ...
+```
+
+What goes on here? Compound characters where first decomposed by
+`NFD`. Then e was replaced with a by the custom transliterator. Then
+non-spacing accents were (re-)composed again.
+
+Note, that when defining a custom transliterator with
+`icu:transliterator-from-rules(...)`, this function has to be called
+before calls to `icu:transliterate(...)` which make use of it. Also be
+aware of the lazy evaluation of XSLT: A call of the function in a
+global `<xsl:variable>` won't get evaluated before it is needed for
+the output of the transformation.
+
+### Task
+
+Write a transliterator for Arabic script to Latin script that gets
+vowels right.
