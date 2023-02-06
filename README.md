@@ -38,7 +38,7 @@ Two things are necessary:
    file](https://www.saxonica.com/html/documentation11/configuration/configuration-file/). Such
    a configuration is in [`saxon-config.xml`](saxon-config.xml). You
    can use it from the Saxon command line interface via the argument
-   `-config saxon-config.xml`. When using Java, you should also have a
+   `-config:saxon-config.xml`. When using Java, you should also have a
    look at the
    [`IcuXPathFunctionRegistry.register(Processor)`](src/main/java/de/wwu/scdh/xpath/icu/IcuXPathFunctionRegistry.java).
 
