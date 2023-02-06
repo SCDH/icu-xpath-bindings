@@ -199,13 +199,14 @@ Error at char 19 in expression in xsl:value-of/@select on line 23 column 69 of t
    illegal transliterator ID for icu:transliterate(..., NFD;custom;NFC)
 ```
 
-### Listing Available Translators in ICU4J
+### Listing Translators Available in ICU4J
 
 [`transliterator-ids.html`](../xsl/transliterator-ids.html) shows how
-to use `icu:translator-ids()` to get available transliterators. There
+to use `icu:transliterator-ids()` to get available transliterators. There
 are several hundred! The list can be build with the following command:
 
 ```{shell}
+mvn package
 ./xslt.sh -config:saxon-config.xml -xsl:xsl/transliterator-ids.html -s:pom.xml
 ```
 
