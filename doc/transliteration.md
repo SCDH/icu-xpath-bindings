@@ -142,7 +142,7 @@ the e quite mechanically...
    <xsl:param name="direction" as="xs:string" select="'forward'"/>
 
    <xsl:template match="/">
-      <xsl:variable name="transliterator" select="icu:transliterator-from-rules('custom', unparsed-text($rules), $direction)"/>
+      <xsl:variable name="custom-transliterator" select="icu:transliterator-from-rules('custom', unparsed-text($rules), $direction)"/>
       <xsl:apply-templates/>
    </xsl:template>
 
@@ -179,16 +179,26 @@ results in
 Catta átá ...
 ```
 
-What goes on here? Compound characters where first decomposed by
-`NFD`. Then e was replaced with a by the custom transliterator. Then
-non-spacing accents were (re-)composed again.
+What goes on here? Compound characters are first decomposed by
+`NFD`. Then e is replaced with a by the custom transliterator. Then
+non-spacing accents are (re-)composed again.
 
 Note, that when defining a custom transliterator with
 `icu:transliterator-from-rules(...)`, this function has to be called
-before calls to `icu:transliterate(...)` which make use of it. Also be
-aware of the lazy evaluation of XSLT: A call of the function in a
-global `<xsl:variable>` won't get evaluated before it is needed for
-the output of the transformation.
+before calls to `icu:transliterate(...)` which makes use of it. Also
+be aware of the lazy evaluation of XSLT: A call of the function in a
+global `<xsl:variable>` won't get evaluated before the variable is
+needed for the output of the transformation; the transliterator is not
+stored in the variable, but as a side effect in Java transliterator
+registry. If `$custom-transliterator` would have been defined as a
+global variable, the call of `icu:transliterate(...)` would have been
+resulted in an exception like this:
+
+```{txt}
+Error at char 19 in expression in xsl:value-of/@select on line 23 column 69 of transliterator-from-external-rules.xsl:
+   illegal transliterator ID for icu:transliterate(..., NFD;custom;NFC)
+```
+
 
 ### Task
 
