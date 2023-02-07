@@ -4,11 +4,13 @@
    <modelVersion>4.0.0</modelVersion>
 
    <groupId>de.wwu.scdh</groupId>
-   <artifactId>icu-xpath-bindings</artifactId>
-   <version>0.1.0</version>
+   <artifactId>icu-xpath</artifactId>
+   <version>${revision}</version>
 
-   <name>ICU XPath Bindings</name>
+   <name>ICU XPath Bindings (Base)</name>
    <url>https://github.com/scdh/icu-xpath-bindings</url>
+
+   <packaging>pom</packaging>
 
    <developers>
       <developer>
@@ -32,6 +34,10 @@
    </scm>
 
    <properties>
+
+      <!-- VERSION NUMBER -->
+      <revision>0.2.0</revision>
+
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
       <maven.compiler.source>11</maven.compiler.source>
@@ -47,37 +53,9 @@
 
    <dependencies>
       <dependency>
-         <groupId>net.sf.saxon</groupId>
-         <artifactId>Saxon-HE</artifactId>
-         <version>${saxon.version}</version>
-      </dependency>
-      <dependency>
-         <!-- required by Saxon >= 11, XSpec maven plugin 2.2.0 -->
-         <groupId>org.xmlresolver</groupId>
-         <artifactId>xmlresolver</artifactId>
-         <version>${xmlresolver.version}</version>
-      </dependency>
-      <dependency>
          <groupId>org.slf4j</groupId>
          <artifactId>slf4j-api</artifactId>
          <version>${slf4j.version}</version>
-      </dependency>
-      <dependency>
-         <groupId>org.slf4j</groupId>
-         <artifactId>slf4j-simple</artifactId>
-         <version>${slf4j.version}</version>
-      </dependency>
-      <dependency>
-         <groupId>org.junit.jupiter</groupId>
-         <artifactId>junit-jupiter-api</artifactId>
-         <version>${junit.version}</version>
-         <scope>test</scope>
-      </dependency>
-      <dependency>
-         <groupId>org.junit.jupiter</groupId>
-         <artifactId>junit-jupiter-engine</artifactId>
-         <version>${junit.version}</version>
-         <scope>test</scope>
       </dependency>
       <dependency>
 	 <groupId>com.ibm.icu</groupId>
@@ -96,104 +74,9 @@
       </dependency>
    </dependencies>
 
-
-   <build>
-      <plugins>
-
-	 <plugin>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.8.1</version>
-         </plugin>
-         <plugin>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.22.2</version>
-	 </plugin>
-
-	 <plugin>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <executions>
-               <execution>
-                  <id>copy-jars</id>
-                  <phase>process-test-resources</phase>
-                  <goals>
-                     <goal>copy-dependencies</goal>
-                  </goals>
-                  <configuration>
-                     <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                     <includeArtifactIds>Saxon-HE,xmlresolver,icu4j,icu4j-charset,icu4j-localespi,slf4j-api,slf4j-simple</includeArtifactIds>
-                  </configuration>
-               </execution>
-	    </executions>
-	 </plugin>
-
-         <plugin>
-            <artifactId>maven-resources-plugin</artifactId>
-            <version>3.0.2</version>
-            <executions>
-               <execution>
-                  <id>properties-to-resources</id>
-                  <phase>generate-resources</phase>
-                  <goals>
-                     <goal>copy-resources</goal>
-                  </goals>
-                  <configuration>
-                     <outputDirectory>${project.basedir}</outputDirectory>
-                     <resources>
-                        <resource>
-                           <directory>${project.basedir}/xsl</directory>
-                           <includes>
-                              <include>xslt.sh</include>
-                           </includes>
-                           <filtering>true</filtering>
-                        </resource>
-                     </resources>
-                  </configuration>
-               </execution>
-            </executions>
-         </plugin>
-
-	 <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-antrun-plugin</artifactId>
-            <version>3.1.0</version>
-            <executions>
-               <execution>
-                  <id>set-permissions</id>
-                  <phase>test</phase>
-                  <configuration>
-                     <target>
-                        <chmod file="${project.basedir}/xslt.sh" perm="755"/>
-                     </target>
-                  </configuration>
-                  <goals>
-                     <goal>run</goal>
-                  </goals>
-               </execution>
-	    </executions>
-	 </plugin>
-
-	 <!-- Code Coverage Report -->
-         <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.8</version>
-            <executions>
-               <execution>
-                  <goals>
-                     <goal>prepare-agent</goal>
-                  </goals>
-               </execution>
-               <execution>
-                  <id>generate-code-coverage-report</id>
-                  <phase>test</phase>
-                  <goals>
-                     <goal>report</goal>
-                  </goals>
-               </execution>
-            </executions>
-         </plugin>
-
-      </plugins>
-   </build>
+   <modules>
+      <module>bindings</module>
+      <module>oxygen</module>
+   </modules>
 
 </project>
