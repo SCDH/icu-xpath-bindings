@@ -3,47 +3,14 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
 
-   <groupId>de.wwu.scdh</groupId>
+   <parent>
+      <groupId>de.wwu.scdh</groupId>
+      <artifactId>icu-xpath</artifactId>
+      <version>${revision}</version>
+   </parent>
+
    <artifactId>icu-xpath-bindings</artifactId>
-   <version>0.1.0</version>
-
    <name>ICU XPath Bindings</name>
-   <url>https://github.com/scdh/icu-xpath-bindings</url>
-
-   <developers>
-      <developer>
-         <name>Christian Lück</name>
-         <organization>SCDH, University of Münster</organization>
-      </developer>
-   </developers>
-
-   <licenses>
-      <license>
-         <name>MIT License</name>
-         <url>https://opensource.org/licenses/mit-license.php</url>
-      </license>
-   </licenses>
-
-   <scm>
-      <connection>scm:git:https://github.com/scdh/icu-xpath-bindings.git</connection>
-      <developerConnection>scm:git:https://github.com/scdh/icu-xpath-bindings.git</developerConnection>
-      <url>scm:git:https://github.com/scdh/icu-xpath-bindings.git</url>
-      <tag>HEAD</tag>
-   </scm>
-
-   <properties>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-      <maven.compiler.source>11</maven.compiler.source>
-      <maven.compiler.target>11</maven.compiler.target>
-      <maven.compiler.source>1.8</maven.compiler.source>
-      <maven.compiler.target>1.8</maven.compiler.target>
-      <slf4j.version>1.7.32</slf4j.version>
-      <saxon.version>11.2</saxon.version>
-      <xmlresolver.version>4.5.1</xmlresolver.version>
-      <junit.version>5.7.2</junit.version>
-      <icu4j.version>72.1</icu4j.version>
-   </properties>
 
    <dependencies>
       <dependency>
@@ -56,11 +23,6 @@
          <groupId>org.xmlresolver</groupId>
          <artifactId>xmlresolver</artifactId>
          <version>${xmlresolver.version}</version>
-      </dependency>
-      <dependency>
-         <groupId>org.slf4j</groupId>
-         <artifactId>slf4j-api</artifactId>
-         <version>${slf4j.version}</version>
       </dependency>
       <dependency>
          <groupId>org.slf4j</groupId>
@@ -79,23 +41,7 @@
          <version>${junit.version}</version>
          <scope>test</scope>
       </dependency>
-      <dependency>
-	 <groupId>com.ibm.icu</groupId>
-	 <artifactId>icu4j</artifactId>
-	 <version>${icu4j.version}</version>
-      </dependency>
-      <dependency>
-	 <groupId>com.ibm.icu</groupId>
-	 <artifactId>icu4j-charset</artifactId>
-	 <version>${icu4j.version}</version>
-      </dependency>
-      <dependency>
-	 <groupId>com.ibm.icu</groupId>
-	 <artifactId>icu4j-localespi</artifactId>
-	 <version>${icu4j.version}</version>
-      </dependency>
    </dependencies>
-
 
    <build>
       <plugins>
@@ -137,10 +83,10 @@
                      <goal>copy-resources</goal>
                   </goals>
                   <configuration>
-                     <outputDirectory>${project.basedir}</outputDirectory>
+                     <outputDirectory>${maven.multiModuleProjectDirectory}</outputDirectory>
                      <resources>
                         <resource>
-                           <directory>${project.basedir}/xsl</directory>
+                           <directory>${project.basedir}</directory>
                            <includes>
                               <include>xslt.sh</include>
                            </includes>
@@ -162,7 +108,7 @@
                   <phase>test</phase>
                   <configuration>
                      <target>
-                        <chmod file="${project.basedir}/xslt.sh" perm="755"/>
+                        <chmod file="${maven.multiModuleProjectDirectory}/xslt.sh" perm="755"/>
                      </target>
                   </configuration>
                   <goals>
