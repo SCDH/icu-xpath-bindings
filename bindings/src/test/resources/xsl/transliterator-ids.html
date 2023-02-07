@@ -1,0 +1,28 @@
+<html
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:icu="https://unicode-org.github.io/icu/"
+  xsl:xpath-default-namespace="http://maven.apache.org/POM/4.0.0"
+  xsl:exclude-result-prefixes="#all"
+  xsl:version="2.0">
+  <!--
+  ./xslt.sh -config:saxon-config.xml -xsl:xsl/transliterator-ids.html -s:pom.xml
+  -->
+  <head>
+    <title>Available ICU Transliterators</title>
+  </head>
+  <body>
+    <h1>
+      <xsl:text>Transliterators available in ICU </xsl:text>
+      <xsl:value-of select="/project/properties/icu4j.version"/>
+    </h1>
+    <table>
+      <xsl:for-each select="icu:transliterator-ids()">
+	<tr>
+	  <td>
+	    <xsl:value-of select="."/>
+	  </td>
+	</tr>
+      </xsl:for-each>
+    </table>
+  </body>
+</html>
