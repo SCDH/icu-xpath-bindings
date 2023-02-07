@@ -26,6 +26,7 @@ deploy:jdk11:
   script:
     - 'mvn generate-sources -s ci_settings.xml'
     - 'mvn verify -s ci_settings.xml'
+    - mvn help:evaluate -Dexpression=settings.localRepository -q -DforceStdout
   artifacts:
     paths:
       - bindings/target
