@@ -76,6 +76,7 @@
 
    <modules>
       <module>bindings</module>
+      <module>oxygen</module>
    </modules>
 
 </project>
