@@ -40,7 +40,7 @@ Two things are necessary:
    can use it from the Saxon command line interface via the argument
    `-config:saxon-config.xml`. When using Java, you should also have a
    look at the
-   [`IcuXPathFunctionRegistry.register(Processor)`](src/main/java/de/wwu/scdh/xpath/icu/IcuXPathFunctionRegistry.java).
+   [`IcuXPathFunctionRegistry.register(Processor)`](bindings/src/main/java/de/wwu/scdh/xpath/icu/IcuXPathFunctionRegistry.java).
 
 2. Provide the jar file to the classpath, so that the java classes
    that define the functions are available to Saxon. Dependency
