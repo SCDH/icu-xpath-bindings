@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The plugin.dtd file is located in the OXYGEN_INSATALL_DIR/plugins
+     directory -->
+<!DOCTYPE plugin SYSTEM "../plugin.dtd">
+<plugin
+    name="${project.name}"
+    description="Provide XPath function extensions based on ICU4J"
+    version="${project.version}"
+    class="de.wwu.scdh.xpath.icu.oxygen.IcuXPathPlugin">
+
+   <runtime>
+      <librariesFolder name="lib" />
+      <!-- during development -->
+      <librariesFolder name="target" />
+      <librariesFolder name="target/lib" />
+   </runtime>
+
+   <extension
+       type="WorkspaceAccess"
+       class="de.wwu.scdh.xpath.icu.oxygen.IcuXPathPluginExtension"/>
+
+</plugin>

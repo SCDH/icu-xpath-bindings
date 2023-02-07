@@ -23,7 +23,7 @@ import de.wwu.scdh.xpath.icu.IcuXPathFunctionRegistry;
 
 public class TransliteratorIdsTest {
 
-    private static final String XSLT = Paths.get("xsl", "transliterator-ids.html").toFile().toString();
+    private static final String XSLT = Paths.get("src", "test", "resources",  "xsl", "transliterator-ids.html").toFile().toString();
 
     protected ExtensionFunctionCall function;
 

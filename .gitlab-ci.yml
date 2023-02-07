@@ -26,9 +26,28 @@ deploy:jdk11:
   script:
     - 'mvn generate-sources -s ci_settings.xml'
     - 'mvn verify -s ci_settings.xml'
+    - mvn help:evaluate -Dexpression=settings.localRepository -q -DforceStdout
   artifacts:
     paths:
-      - service/target
+      - bindings/target
+      - oxygen/target
   only:
     - master
     - tags
+
+
+pages:
+  image: busybox:latest
+  stage: deploy
+  script:
+    - mkdir -p public
+    - ls -la
+    - cp -v oxygen/target/*-plugin.jar public/
+    - cp -v oxygen/target/descriptor.xml public/
+  artifacts:
+    paths:
+      - public
+  only:
+    # https://gitlab.com/gitlab-org/gitlab-foss/-/issues/27818
+    variables:
+      - $CI_COMMIT_TAG =~ /^v\d+.\d+.\d+$/
