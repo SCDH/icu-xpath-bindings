@@ -15,6 +15,7 @@
 
    <properties>
       <oxygen.sdk.version>23.1.0.4</oxygen.sdk.version>
+      <dependencies.jar>jar-with-dependencies</dependencies.jar>
    </properties>
 
    <repositories>
@@ -45,6 +46,7 @@
             <version>3.8.1</version>
          </plugin>
 
+	 <!--
 	 <plugin>
             <artifactId>maven-dependency-plugin</artifactId>
             <executions>
@@ -61,6 +63,7 @@
                </execution>
 	    </executions>
 	 </plugin>
+	 -->
 
          <plugin>
             <artifactId>maven-resources-plugin</artifactId>
@@ -95,7 +98,26 @@
             <version>2.4</version>
             <executions>
                <execution>
-                  <id>make-assembly</id>
+                  <id>assemble-jar-with-dependencies</id>
+                  <phase>package</phase>
+                  <goals>
+                     <goal>single</goal>
+                  </goals>
+                  <configuration>
+                     <finalName>${project.artifactId}-${project.version}</finalName>
+		     <archive>
+			<manifest>
+			   <addClasspath>true</addClasspath>
+			</manifest>
+		     </archive>
+                     <archiveBaseDirectory>${project.basedir}</archiveBaseDirectory>
+                     <descriptors>
+                        <descriptor>assembly-jar.xml</descriptor>
+                     </descriptors>
+                  </configuration>
+               </execution>
+               <execution>
+                  <id>assemble-plugin</id>
                   <phase>package</phase>
                   <goals>
                      <goal>single</goal>
