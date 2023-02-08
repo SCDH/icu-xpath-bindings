@@ -1,5 +1,9 @@
 # Changes
 
+## 0.2.1
+
+- assemble dependencies into a single jar file for the oxygen plugin
+
 ## 0.2.0
 
 - provide XPath extension functions through the SPI
