@@ -9,10 +9,12 @@
     class="de.wwu.scdh.xpath.icu.oxygen.IcuXPathPlugin">
 
    <runtime>
-      <librariesFolder name="lib" />
+      <!-- we use the global class loader to make the extension
+	   functions available throughout in oxygen -->
+      <librariesFolder name="lib" scope="global"/>
       <!-- during development -->
-      <librariesFolder name="target" />
-      <librariesFolder name="target/lib" />
+      <librariesFolder name="target" scope="global"/>
+      <librariesFolder name="target/lib" scope="global"/>
    </runtime>
 
    <extension
