@@ -1,5 +1,10 @@
 # Changes
 
+## 0.2.2
+
+- a fix in the class loading in the oxygen plugin makes the extension
+  functions available by installing the plugin
+
 ## 0.2.1
 
 - assemble dependencies into a single jar file for the oxygen plugin

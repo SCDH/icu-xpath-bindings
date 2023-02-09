@@ -36,7 +36,7 @@
    <properties>
 
       <!-- VERSION NUMBER -->
-      <revision>0.2.1</revision>
+      <revision>0.2.2</revision>
 
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
