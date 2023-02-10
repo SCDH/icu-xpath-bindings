@@ -1,5 +1,11 @@
 # Changes
 
+## 0.2.3
+
+- issue #1
+  - added resources to analyse it
+  - tried to set the class loader to fix it, but is not fixed yet
+
 ## 0.2.2
 
 - a fix in the class loading in the oxygen plugin makes the extension
