@@ -85,6 +85,7 @@ public class Transliterate extends ExtensionFunctionDefinition {
 					     + this.getDefinition().getArgumentTypes().length,
 					     e);
 		} catch (IllegalArgumentException e) {
+		    LOG.error("illegal transliterator ID: {}\n{}", e.getMessage(), e);
 		    throw new XPathException("illegal transliterator ID for icu:transliterate(..., "
 					     + ((StringValue) arguments[1]).materialize().toString() + ")",
 					     e);
