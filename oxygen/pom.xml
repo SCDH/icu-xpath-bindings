@@ -20,6 +20,10 @@
 
    <repositories>
       <repository>
+         <id>maven-central</id>
+         <url>https://repo1.maven.org/maven2/</url>
+      </repository>
+      <repository>
          <id>oxygen-repository</id>
          <url>https://www.oxygenxml.com/maven/</url>
       </repository>
@@ -35,6 +39,11 @@
           <groupId>com.oxygenxml</groupId>
           <artifactId>oxygen</artifactId>
           <version>${oxygen.sdk.version}</version>
+       </dependency>
+       <dependency>
+	  <groupId>org.slf4j</groupId>
+	  <artifactId>slf4j-reload4j</artifactId>
+	  <version>${slf4j.version}</version>
        </dependency>
    </dependencies>
 
@@ -57,7 +66,7 @@
                   </goals>
                   <configuration>
                      <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                     <includeArtifactIds>icu-xpath-bindings,icu4j,icu4j-charset,icu4j-localespi,slf4j-api</includeArtifactIds>
+                     <includeArtifactIds>icu-xpath-bindings,icu4j,icu4j-charset,icu4j-localespi,slf4j-api,slf4j-reload4j</includeArtifactIds>
                   </configuration>
                </execution>
 	    </executions>

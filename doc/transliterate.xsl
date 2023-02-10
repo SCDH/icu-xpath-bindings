@@ -7,7 +7,7 @@
 
    <xsl:output method="text"/>
 
-   <xsl:param name="transliterator" as="xs:string" select="'Any-NFD; [:nonspacing mark:] Any-Remove; Any-NFC'"/>
+   <xsl:param name="transliterator" as="xs:string" select="'NFD; [:nonspacing mark:] Remove; NFC'"/>
 
    <xsl:template match="text()">
       <xsl:value-of select="icu:transliterate(., $transliterator)"/>

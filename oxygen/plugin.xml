@@ -3,18 +3,19 @@
      directory -->
 <!DOCTYPE plugin SYSTEM "../plugin.dtd">
 <plugin
+    id="${project.groupId}.${project.artifactId}"
     name="${project.name}"
     description="Provide XPath function extensions based on ICU4J"
     version="${project.version}"
-    class="de.wwu.scdh.xpath.icu.oxygen.IcuXPathPlugin">
+    class="de.wwu.scdh.xpath.icu.oxygen.IcuXPathPlugin"
+    classLoaderType="preferReferencedResources">
 
    <runtime>
       <!-- we use the global class loader to make the extension
-	   functions available throughout in oxygen -->
-      <librariesFolder name="lib" scope="global"/>
-      <!-- during development -->
-      <librariesFolder name="target" scope="global"/>
-      <librariesFolder name="target/lib" scope="global"/>
+	   functions available throughout in oxygen; and we make
+	   it high priority because we want to use the ICU4J
+	   library packaged with this plugin. -->
+      <librariesFolder name="lib" scope="globalHighPriority"/>
    </runtime>
 
    <extension
