@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
 
-   <id>${dependencies.jar}</id>
+   <id>with-dependencies</id>
 
    <includeBaseDirectory>false</includeBaseDirectory>
 
@@ -18,12 +18,12 @@
 	 <unpack>true</unpack>
 	 <scope>runtime</scope>
 	 <includes>
-	    <include>${project.groupId}:icu-xpath-bindings</include>
 	    <include>${project.groupId}:${project.artifactId}</include>
 	    <include>com.ibm.icu:icu4j</include>
 	    <include>com.ibm.icu:icu4j-charset</include>
 	    <include>com.ibm.icu:icu4j-localespi</include>
 	    <include>org.slf4j:slf4j-api</include>
+	    <include>org.slf4j:slf4j-simple</include>
 	 </includes>
       </dependencySet>
    </dependencySets>
