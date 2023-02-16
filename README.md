@@ -55,6 +55,9 @@ in oXygen. You don't need to clone this repo.
 
 ### Usage with Saxon's command line interface
 
+**tl;dr**: Run `mvn package` and use the `xslt.sh` or `saxon.sh` shell
+wrappers with the option `-config:saxon-config.xml`.
+
 Two things are necessary:
 
 1. Tell Saxon that there are XPath functions. This can be done via a
@@ -64,9 +67,14 @@ Two things are necessary:
    can use it from the Saxon command line interface via the argument
    `-config:saxon-config.xml`.
 
-2. Provide the [jar file]() to the classpath, so that the Java classes
-   that define the functions are available to Saxon. Dependency
-   packages like ICU4J also have to be included into the classpath.
+2. Provide a jar file to the classpath, so that the Java classes that
+   define the functions are available to Saxon. On the [releases
+   page](https://github.com/SCDH/icu-xpath-bindings/releases/), you
+   can find jar files for each release. Use
+   `icu-xpath-bindings-VERSION-with-dependencies.jar` or
+   `icu-xpath-bindings-VERSION.jar`. The former has everything but
+   Saxon packed into it. If using the latter one, dependency packages
+   like ICU4J also have to be included into the classpath:
 
 - icu4j
 - icu4j-charset
@@ -93,8 +101,8 @@ present within the project:
 - `bindings/target/lib/slf4j-api-VERSION.jar`
 
 For convenience, after running `mvn package` there will also be the
-shell script `xslt.sh` in the repo's root folder. It's a shell wrapper
-around Saxon that sets the classpath correctly.
+shell scripts `xslt.sh` and `saxon.sh` in the repo's root folder. It's
+a shell wrapper around Saxon that sets the classpath correctly.
 
 
 ### Java
@@ -104,6 +112,18 @@ When using Java, you should also have a look at the
 the classes with the function definition are registered for loading
 through the SPI.
 
+## Building locally
+
+You can build and test the project locally. You can also install the
+oxygen plugin from a local build. Therefore, run
+
+```{shell}
+mvn -Drelease.url="" package
+```
+
+Then, you can provide the descriptor file under
+`oxygen/target/descriptor.xml` to the oxygen extension installation
+dialog.
 
 
 ## Further Reading
