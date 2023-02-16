@@ -1,5 +1,10 @@
 # Changes
 
+## 0.2.5
+
+- fix link to release
+- no changes to codebase
+
 ## 0.2.4
 
 - setup up github actions for testing and releasing
