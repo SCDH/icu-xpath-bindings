@@ -44,7 +44,7 @@ to provide the following URL to the installation dialog from **Help**
 -> **Install new add-ons...**:
 
 ```
-https://scdh.zivgitlabpages.uni-muenster.de/tei-processing/icu-xpath-bindings/descriptor.xml
+https://scdh.github.io/icu-xpath-bindings/descriptor.xml
 ```
 
 Note: As we don't have a key for signing the extension, we will have
