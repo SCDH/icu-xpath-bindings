@@ -112,3 +112,10 @@ through the SPI.
 
 - [strip accents with ICU
   transliterator](https://stackoverflow.com/questions/2992066/code-to-strip-diacritical-marks-using-icu)
+
+
+## License
+
+MIT License
+
+Copyright (c) 2023 SCDH, Westfälische Wilhelms-Universität Münster
