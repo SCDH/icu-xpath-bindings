@@ -1,5 +1,11 @@
 # Changes
 
+## 0.2.4
+
+- setup up github actions for testing and releasing
+- no changes since last release
+
+
 ## 0.2.3
 
 - issue #1
