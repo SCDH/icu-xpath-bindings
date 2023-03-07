@@ -15,7 +15,7 @@
 	   functions available throughout in oxygen; and we make
 	   it high priority because we want to use the ICU4J
 	   library packaged with this plugin. -->
-      <librariesFolder name="lib" scope="globalHighPriority"/>
+      <librariesFolder name="lib" scope="global"/>
    </runtime>
 
    <extension
