@@ -1,5 +1,9 @@
 # Changes
 
+## 0.2.6
+
+- fix issue #1
+
 ## 0.2.5
 
 - fix link to release
