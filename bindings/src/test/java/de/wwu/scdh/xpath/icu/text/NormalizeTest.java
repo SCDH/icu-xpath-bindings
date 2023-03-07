@@ -43,7 +43,7 @@ public class NormalizeTest {
 	    };
 	StringValue output = (StringValue) normalizer.call(null, arguments);
 	// the decomposed string is as long as the input string
-	assertEquals(input.length(), output.getContent().length());
+	assertEquals(input.length(), output.getStringValue().length());
     }
 
     @Test
@@ -79,7 +79,7 @@ public class NormalizeTest {
 	    };
 	StringValue output = (StringValue) normalizer.call(null, arguments);
 	// the decomposed string is as long as the input string
-	assertEquals(input.length(), output.getContent().length());
+	assertEquals(input.length(), output.getStringValue().length());
     }
 
     @Test
@@ -93,7 +93,7 @@ public class NormalizeTest {
 	    };
 	StringValue output = (StringValue) normalizer.call(null, arguments);
 	// the decomposed string is as long as the input string
-	assertEquals(input.length(), output.getContent().length());
+	assertEquals(input.length(), output.getStringValue().length());
     }
 
 
@@ -107,7 +107,7 @@ public class NormalizeTest {
 	    };
 	StringValue output = (StringValue) normalizer.call(null, arguments);
 	// the decomposed string is 1 character longer than the input string
-	assertEquals(input.length() + 1, output.getContent().length());
+	assertEquals(input.length() + 1, output.getStringValue().length());
     }
 
     @Test
@@ -120,7 +120,7 @@ public class NormalizeTest {
 	    };
 	StringValue output = (StringValue) normalizer.call(null, arguments);
 	// the composed string is as long as the input string which has a composed character
-	assertEquals(input.length(), output.getContent().length());
+	assertEquals(input.length(), output.getStringValue().length());
     }
 
     @Test

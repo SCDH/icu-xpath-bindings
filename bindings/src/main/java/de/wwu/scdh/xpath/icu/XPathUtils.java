@@ -25,7 +25,7 @@ public class XPathUtils {
 
     public static int getDirectionArgument(Sequence arg) throws XPathException {
 	StringValue inputValue = (StringValue) arg.materialize();
-	String directionString = ((AtomicValue) inputValue).toString();
+	String directionString = inputValue.getStringValue();
 	if (directionString.toLowerCase().equals("forward")) {
 	    return Transliterator.FORWARD;
 	} else if (directionString.toLowerCase().equals("reverse")) {

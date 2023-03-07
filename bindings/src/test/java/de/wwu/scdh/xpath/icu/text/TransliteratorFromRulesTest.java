@@ -54,7 +54,7 @@ public class TransliteratorFromRulesTest {
 		new StringValue("test")
 	    };
 	StringValue output = (StringValue) other.call(null, otherArguments);
-	assertEquals("ya", output.getContent().toString());
+	assertEquals("ya", output.getStringValue());
     }
 
     @Test

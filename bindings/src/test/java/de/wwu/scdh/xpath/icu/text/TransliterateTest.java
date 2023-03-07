@@ -41,7 +41,7 @@ public class TransliterateTest {
 		new StringValue("NFD; [:nonspacing mark:] Remove; NFC")
 	    };
 	StringValue output = (StringValue) function.call(null, arguments);
-	assertEquals("Parlez vous francais?", output.getContent().toString());
+	assertEquals("Parlez vous francais?", output.getStringValue());
     }
 
     @Test
