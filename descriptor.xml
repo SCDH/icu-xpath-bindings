@@ -3,8 +3,8 @@
     xsi:schemaLocation="http://www.oxygenxml.com/ns/extension http://www.oxygenxml.com/ns/extension/extensions.xsd">
     <xt:extension xmlns:xt="http://www.oxygenxml.com/ns/extension"
         id="de.wwu.scdh.icu-xpath-oxygen">
-        <xt:location href="https://github.com/SCDH/icu-xpath-bindings/releases/download/0.2.5/icu-xpath-oxygen-0.2.5-plugin.jar"/>
-        <xt:version>0.2.5</xt:version>
+        <xt:location href="https://github.com/SCDH/icu-xpath-bindings/releases/download/0.2.6/icu-xpath-oxygen-0.2.6-plugin.jar"/>
+        <xt:version>0.2.6</xt:version>
         <xt:oxy_version>17.0+</xt:oxy_version>
         <xt:type>plugin</xt:type>
         <xt:author>Christian Lück</xt:author>
