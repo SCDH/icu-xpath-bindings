@@ -18,9 +18,9 @@ public class XPathUtils {
      * @param arg  the argument as {@link Sequence}
      * @return a {@link String}
      */
-    public static String getStringArgument(Sequence arg) {
-	StringValue inputValue = (StringValue) arg.materialize();
-	return ((AtomicValue) inputValue).toString();
+    public static String getStringArgument(Sequence arg) throws XPathException {
+        StringValue inputValue = (StringValue) arg.materialize();
+	return inputValue.getStringValue();
     }
 
     public static int getDirectionArgument(Sequence arg) throws XPathException {
