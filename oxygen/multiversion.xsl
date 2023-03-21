@@ -17,22 +17,30 @@
 
    <xsl:template match="extension">
       <xsl:variable name="context" select="."/>
-      <xsl:for-each select="tokenize($oxygen-versions, ',')">
-	 <xsl:variable name="oxygen-version" select="."/>
-	 <xsl:copy select="$context">
-	    <xsl:apply-templates select="@*"/>
-	    <xsl:apply-templates select="*">
-	       <xsl:with-param name="oxygen-version" select="$oxygen-version" tunnel="true"/>
-	    </xsl:apply-templates>
-	 </xsl:copy>
+      <xsl:for-each select="tokenize($oxygen-versions, '\|')">
+	 <xsl:variable name="plugin-version" select="tokenize(., ':')[1]"/>
+	 <xsl:variable name="versions" select="tokenize(., ':')[2]"/>
+	 <xsl:for-each select="tokenize($versions, ',')">
+	    <xsl:variable name="oxygen-version" select="."/>
+	    <xsl:copy select="$context">
+	       <xsl:apply-templates select="node() | attribute()">
+		  <xsl:with-param name="oxygen-version" select="$oxygen-version" tunnel="true"/>
+		  <xsl:with-param name="plugin-version" select="$plugin-version" tunnel="true"/>
+	       </xsl:apply-templates>
+	    </xsl:copy>
+	 </xsl:for-each>
       </xsl:for-each>
    </xsl:template>
 
-   <xsl:template match="location/@href">
+   <!-- appending the version to the id is not nice. But same id for all versions doesn't work. -->
+   <xsl:template match="extension/@id">
       <xsl:param name="oxygen-version" as="xs:string" tunnel="true"/>
-      <xsl:variable name="version" select="replace($oxygen-version, '\.\*$', '')"/>
-      <!-- replace ...oxygen[VERSION]- with oxygen<OXYGEN-VERSION>- -->
-      <xsl:value-of select="replace(., concat($artifact, '[^-]*'), concat($artifact, $version))"/>
+      <xsl:attribute name="id" select="concat(., $oxygen-version)"/>
+   </xsl:template>
+
+   <xsl:template match="location/@href">
+      <xsl:param name="plugin-version" as="xs:string" tunnel="true"/>
+      <xsl:attribute name="href" select="replace(., concat($artifact, '[^-]*'), concat($artifact, $plugin-version))"/>
    </xsl:template>
 
    <xsl:template match="oxy_version/text()">
