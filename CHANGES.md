@@ -1,5 +1,10 @@
 # Changes
 
+## 0.3.1
+
+- Oxygen 23 is not supported due to changes in Saxon API from Saxon 9
+  to 10
+
 ## 0.3.0
 
 - support multiple oxygen versions

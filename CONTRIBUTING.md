@@ -48,7 +48,7 @@ release. Unfortunately, that means that the plugin has to be build
 against such Saxon versions and Oxygen SDK versions. The main
 [`pom.xml`](pom.xml) file provides build profiles for Oxygen releases,
 that set dependencies. They can be activated by setting the
-`oxygen.version` property to a major release, `23`, `24`, `25`. To
+`oxygen.version` property to a major release, `24`, `25`. To
 support a new oxygen version, a new build profile has to be added and
 the `oxygen.versions` property has to be updated, too. E.g. build for
 Oxygen 24 run

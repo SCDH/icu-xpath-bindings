@@ -54,19 +54,6 @@ jobs:
           asset_name: icu-xpath-bindings-${{ github.ref_name }}-with-dependencies.jar
           asset_content_type: application/java-archive
 
-      - name: build for oxygen 23
-        run: mvn -Doxygen.version=23 --batch-mode --update-snapshots clean package
-
-      - name: upload oxygen plugin to release
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: oxygen/target/icu-xpath-oxygen23-${{ github.ref_name }}-plugin.jar
-          asset_name: icu-xpath-oxygen23-${{ github.ref_name }}-plugin.jar
-          asset_content_type: application/java-archive
-
       - name: build for oxygen 24
         run: mvn -Doxygen.version=24 --batch-mode --update-snapshots clean package
 

@@ -36,7 +36,7 @@
    <properties>
 
       <!-- VERSION NUMBER -->
-      <revision>0.3.0</revision>
+      <revision>0.3.1</revision>
 
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -49,7 +49,7 @@
       <xmlresolver.version>4.5.1</xmlresolver.version>
       <junit.version>5.7.2</junit.version>
       <icu4j.version>72.1</icu4j.version>
-      <oxygen.versions>23:23.0,23.1,23.2|24:24.0,24.1,24.2|25:25.0+</oxygen.versions>
+      <oxygen.versions>24:24.0,24.1,24.2|25:25.0+</oxygen.versions>
    </properties>
 
    <dependencies>
@@ -86,19 +86,6 @@
 	   oxygenxml. Please add new versions to the property
 	   oxygen.versions, too!
       -->
-      <profile>
-	 <id>oxygen23</id>
-	 <activation>
-	    <property>
-	       <name>oxygen.version</name>
-	       <value>23</value>
-	    </property>
-	 </activation>
-	 <properties>
-	    <saxon.version>9.9.1-7</saxon.version>
-	    <oxygen.sdk.version>23.1.0.4</oxygen.sdk.version>
-	 </properties>
-      </profile>
       <profile>
 	 <id>oxygen24</id>
 	 <activation>
