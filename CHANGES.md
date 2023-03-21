@@ -1,5 +1,10 @@
 # Changes
 
+## 0.3.0
+
+- support multiple oxygen versions
+  - build with version-specific Saxon and SDK releases
+
 ## 0.2.6
 
 - fix issue #1
