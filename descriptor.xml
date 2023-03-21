@@ -1,33 +1,32 @@
-<xt:extensions xmlns:xt="http://www.oxygenxml.com/ns/extension"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.oxygenxml.com/ns/extension http://www.oxygenxml.com/ns/extension/extensions.xsd">
-    <xt:extension xmlns:xt="http://www.oxygenxml.com/ns/extension"
-        id="de.wwu.scdh.icu-xpath-oxygen">
-        <xt:location href="https://github.com/SCDH/icu-xpath-bindings/releases/download/0.2.6/icu-xpath-oxygen-0.2.6-plugin.jar"/>
-        <xt:version>0.2.6</xt:version>
-        <xt:oxy_version>17.0+</xt:oxy_version>
-        <xt:type>plugin</xt:type>
-        <xt:author>Christian Lück</xt:author>
-        <xt:name>ICU XPath Bindings oXygen plugin</xt:name>
-        <xt:description>
-	   <html xmlns="http://www.w3.org/1999/xhtml">
-              <head>
-                 <title>ICU XPath Bindings oXygen plugin</title>
-              </head>
-              <body>
-                 <div>
-                    <p>
+<?xml version="1.0" encoding="UTF-8"?>
+<xt:extensions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:xt="http://www.oxygenxml.com/ns/extension"
+               xsi:schemaLocation="http://www.oxygenxml.com/ns/extension http://www.oxygenxml.com/ns/extension/extensions.xsd">
+   <xt:extension id="de.wwu.scdh.icu-xpath-oxygen23.0">
+      <xt:location href="https://github.com/SCDH/icu-xpath-bindings/releases/download/0.3.0/icu-xpath-oxygen23-0.3.0-plugin.jar"/>
+      <xt:version>0.3.0</xt:version>
+      <xt:oxy_version>23.0</xt:oxy_version>
+      <xt:type>plugin</xt:type>
+      <xt:author>Christian Lück</xt:author>
+      <xt:name>ICU XPath Bindings oXygen plugin</xt:name>
+      <xt:description>
+         <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+               <title>ICU XPath Bindings oXygen plugin</title>
+            </head>
+            <body>
+               <div>
+                  <p>
 		       This plugin installs an the ICU XPath bindings.
 		    </p>
-                    <p>
-		       For more details see <a
-		       href="https://github.com/scdh/icu-xpath-bindings">https://github.com/scdh/icu-xpath-bindings</a>
-                    </p>
-                 </div>
-              </body>
-           </html>
-        </xt:description>
-        <xt:license><![CDATA[
+                  <p>
+		       For more details see <a href="https://github.com/scdh/icu-xpath-bindings">https://github.com/scdh/icu-xpath-bindings</a>
+                  </p>
+               </div>
+            </body>
+         </html>
+      </xt:description>
+      <xt:license>
 MIT License
 
 Copyright (c) 2023 SCDH, Westfälische Wilhelms-Universität Münster
@@ -49,6 +48,294 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-]]></xt:license>
-    </xt:extension>
+</xt:license>
+   </xt:extension>
+   <xt:extension id="de.wwu.scdh.icu-xpath-oxygen23.1">
+      <xt:location href="https://github.com/SCDH/icu-xpath-bindings/releases/download/0.3.0/icu-xpath-oxygen23-0.3.0-plugin.jar"/>
+      <xt:version>0.3.0</xt:version>
+      <xt:oxy_version>23.1</xt:oxy_version>
+      <xt:type>plugin</xt:type>
+      <xt:author>Christian Lück</xt:author>
+      <xt:name>ICU XPath Bindings oXygen plugin</xt:name>
+      <xt:description>
+         <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+               <title>ICU XPath Bindings oXygen plugin</title>
+            </head>
+            <body>
+               <div>
+                  <p>
+		       This plugin installs an the ICU XPath bindings.
+		    </p>
+                  <p>
+		       For more details see <a href="https://github.com/scdh/icu-xpath-bindings">https://github.com/scdh/icu-xpath-bindings</a>
+                  </p>
+               </div>
+            </body>
+         </html>
+      </xt:description>
+      <xt:license>
+MIT License
+
+Copyright (c) 2023 SCDH, Westfälische Wilhelms-Universität Münster
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</xt:license>
+   </xt:extension>
+   <xt:extension id="de.wwu.scdh.icu-xpath-oxygen23.2">
+      <xt:location href="https://github.com/SCDH/icu-xpath-bindings/releases/download/0.3.0/icu-xpath-oxygen23-0.3.0-plugin.jar"/>
+      <xt:version>0.3.0</xt:version>
+      <xt:oxy_version>23.2</xt:oxy_version>
+      <xt:type>plugin</xt:type>
+      <xt:author>Christian Lück</xt:author>
+      <xt:name>ICU XPath Bindings oXygen plugin</xt:name>
+      <xt:description>
+         <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+               <title>ICU XPath Bindings oXygen plugin</title>
+            </head>
+            <body>
+               <div>
+                  <p>
+		       This plugin installs an the ICU XPath bindings.
+		    </p>
+                  <p>
+		       For more details see <a href="https://github.com/scdh/icu-xpath-bindings">https://github.com/scdh/icu-xpath-bindings</a>
+                  </p>
+               </div>
+            </body>
+         </html>
+      </xt:description>
+      <xt:license>
+MIT License
+
+Copyright (c) 2023 SCDH, Westfälische Wilhelms-Universität Münster
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</xt:license>
+   </xt:extension>
+   <xt:extension id="de.wwu.scdh.icu-xpath-oxygen24.0">
+      <xt:location href="https://github.com/SCDH/icu-xpath-bindings/releases/download/0.3.0/icu-xpath-oxygen24-0.3.0-plugin.jar"/>
+      <xt:version>0.3.0</xt:version>
+      <xt:oxy_version>24.0</xt:oxy_version>
+      <xt:type>plugin</xt:type>
+      <xt:author>Christian Lück</xt:author>
+      <xt:name>ICU XPath Bindings oXygen plugin</xt:name>
+      <xt:description>
+         <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+               <title>ICU XPath Bindings oXygen plugin</title>
+            </head>
+            <body>
+               <div>
+                  <p>
+		       This plugin installs an the ICU XPath bindings.
+		    </p>
+                  <p>
+		       For more details see <a href="https://github.com/scdh/icu-xpath-bindings">https://github.com/scdh/icu-xpath-bindings</a>
+                  </p>
+               </div>
+            </body>
+         </html>
+      </xt:description>
+      <xt:license>
+MIT License
+
+Copyright (c) 2023 SCDH, Westfälische Wilhelms-Universität Münster
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</xt:license>
+   </xt:extension>
+   <xt:extension id="de.wwu.scdh.icu-xpath-oxygen24.1">
+      <xt:location href="https://github.com/SCDH/icu-xpath-bindings/releases/download/0.3.0/icu-xpath-oxygen24-0.3.0-plugin.jar"/>
+      <xt:version>0.3.0</xt:version>
+      <xt:oxy_version>24.1</xt:oxy_version>
+      <xt:type>plugin</xt:type>
+      <xt:author>Christian Lück</xt:author>
+      <xt:name>ICU XPath Bindings oXygen plugin</xt:name>
+      <xt:description>
+         <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+               <title>ICU XPath Bindings oXygen plugin</title>
+            </head>
+            <body>
+               <div>
+                  <p>
+		       This plugin installs an the ICU XPath bindings.
+		    </p>
+                  <p>
+		       For more details see <a href="https://github.com/scdh/icu-xpath-bindings">https://github.com/scdh/icu-xpath-bindings</a>
+                  </p>
+               </div>
+            </body>
+         </html>
+      </xt:description>
+      <xt:license>
+MIT License
+
+Copyright (c) 2023 SCDH, Westfälische Wilhelms-Universität Münster
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</xt:license>
+   </xt:extension>
+   <xt:extension id="de.wwu.scdh.icu-xpath-oxygen24.2">
+      <xt:location href="https://github.com/SCDH/icu-xpath-bindings/releases/download/0.3.0/icu-xpath-oxygen24-0.3.0-plugin.jar"/>
+      <xt:version>0.3.0</xt:version>
+      <xt:oxy_version>24.2</xt:oxy_version>
+      <xt:type>plugin</xt:type>
+      <xt:author>Christian Lück</xt:author>
+      <xt:name>ICU XPath Bindings oXygen plugin</xt:name>
+      <xt:description>
+         <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+               <title>ICU XPath Bindings oXygen plugin</title>
+            </head>
+            <body>
+               <div>
+                  <p>
+		       This plugin installs an the ICU XPath bindings.
+		    </p>
+                  <p>
+		       For more details see <a href="https://github.com/scdh/icu-xpath-bindings">https://github.com/scdh/icu-xpath-bindings</a>
+                  </p>
+               </div>
+            </body>
+         </html>
+      </xt:description>
+      <xt:license>
+MIT License
+
+Copyright (c) 2023 SCDH, Westfälische Wilhelms-Universität Münster
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</xt:license>
+   </xt:extension>
+   <xt:extension id="de.wwu.scdh.icu-xpath-oxygen25.0+">
+      <xt:location href="https://github.com/SCDH/icu-xpath-bindings/releases/download/0.3.0/icu-xpath-oxygen25-0.3.0-plugin.jar"/>
+      <xt:version>0.3.0</xt:version>
+      <xt:oxy_version>25.0+</xt:oxy_version>
+      <xt:type>plugin</xt:type>
+      <xt:author>Christian Lück</xt:author>
+      <xt:name>ICU XPath Bindings oXygen plugin</xt:name>
+      <xt:description>
+         <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+               <title>ICU XPath Bindings oXygen plugin</title>
+            </head>
+            <body>
+               <div>
+                  <p>
+		       This plugin installs an the ICU XPath bindings.
+		    </p>
+                  <p>
+		       For more details see <a href="https://github.com/scdh/icu-xpath-bindings">https://github.com/scdh/icu-xpath-bindings</a>
+                  </p>
+               </div>
+            </body>
+         </html>
+      </xt:description>
+      <xt:license>
+MIT License
+
+Copyright (c) 2023 SCDH, Westfälische Wilhelms-Universität Münster
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</xt:license>
+   </xt:extension>
 </xt:extensions>
