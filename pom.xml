@@ -49,6 +49,7 @@
       <xmlresolver.version>4.5.1</xmlresolver.version>
       <junit.version>5.7.2</junit.version>
       <icu4j.version>72.1</icu4j.version>
+      <oxygen.versions>23.*,24.*,25.*</oxygen.versions>
    </properties>
 
    <dependencies>
@@ -78,5 +79,71 @@
       <module>bindings</module>
       <module>oxygen</module>
    </modules>
+
+   <profiles>
+      <!--
+	   Profiles for building for different versions of
+	   oxygenxml. Please add new versions to the property
+	   oxygen.versions, too!
+      -->
+      <profile>
+	 <id>oxygen23</id>
+	 <activation>
+	    <property>
+	       <name>oxygen.version</name>
+	       <value>23</value>
+	    </property>
+	 </activation>
+	 <properties>
+	    <saxon.version>9.9.1-7</saxon.version>
+	    <oxygen.sdk.version>23.1.0.4</oxygen.sdk.version>
+	 </properties>
+      </profile>
+      <profile>
+	 <id>oxygen24</id>
+	 <activation>
+	    <property>
+	       <name>oxygen.version</name>
+	       <value>24</value>
+	    </property>
+	 </activation>
+	 <properties>
+	    <saxon.version>10.6</saxon.version>
+	    <oxygen.sdk.version>24.1.0.0</oxygen.sdk.version>
+	 </properties>
+      </profile>
+      <profile>
+	 <id>oxygen25</id>
+	 <activation>
+	    <property>
+	       <name>oxygen.version</name>
+	       <value>25</value>
+	    </property>
+	 </activation>
+	 <properties>
+	    <saxon.version>11.2</saxon.version>
+	    <oxygen.sdk.version>25.0.0.0</oxygen.sdk.version>
+	 </properties>
+      </profile>
+      <profile>
+	 <!-- properties and repositories for every oxygen build profile -->
+	 <id>oxygen</id>
+	 <activation>
+	    <property>
+	       <name>oxygen.version</name>
+	    </property>
+	 </activation>
+	 <repositories>
+	    <repository>
+               <id>maven-central</id>
+               <url>https://repo1.maven.org/maven2/</url>
+	    </repository>
+	    <repository>
+               <id>oxygen-repository</id>
+               <url>https://www.oxygenxml.com/maven/</url>
+	    </repository>
+	 </repositories>
+      </profile>
+   </profiles>
 
 </project>
