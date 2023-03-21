@@ -14,8 +14,8 @@
    <url>https://github.com/scdh/icu-xpath-bindings</url>
 
    <properties>
-      <oxygen.version></oxygen.version>
-      <oxygen.sdk.version>23.1.0.4</oxygen.sdk.version>
+      <oxygen.version>25</oxygen.version>
+      <oxygen.sdk.version>25.0.0.0</oxygen.sdk.version>
       <dependencies.jar>jar-with-dependencies</dependencies.jar>
       <release.url>https://github.com/SCDH/icu-xpath-bindings/releases/download/${revision}/</release.url>
    </properties>
