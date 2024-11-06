@@ -4,6 +4,7 @@ target
 .classpath
 .project
 .settings
+.flattened-pom.xml
 
 /xslt.sh
 /saxon.sh
