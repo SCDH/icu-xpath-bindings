@@ -14,7 +14,7 @@ cache:
     - './mvnw $MAVEN_CLI_OPTS generate-sources'
     - './mvnw $MAVEN_CLI_OPTS verify'
   except:
-    - master
+    - main
 
 # Verify merge requests
 verify:jdk11:
