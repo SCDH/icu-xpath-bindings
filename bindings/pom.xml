@@ -6,7 +6,7 @@
    <parent>
       <groupId>de.wwu.scdh</groupId>
       <artifactId>icu-xpath</artifactId>
-      <version>${revision}</version>
+      <version>${revision}${changelist}</version>
    </parent>
 
    <artifactId>icu-xpath-bindings</artifactId>
