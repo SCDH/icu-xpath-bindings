@@ -46,6 +46,7 @@
       <junit.version>5.7.2</junit.version>
       <icu4j.version>72.1</icu4j.version>
       <oxygen.versions>24:24.0,24.1,24.2|25:25.0+</oxygen.versions>
+      <distribution.url>https://zivgitlab.uni-muenster.de/api/v4/projects/${env.CI_PROJECT_ID}/packages/maven</distribution.url>
    </properties>
 
    <dependencies>
@@ -70,6 +71,27 @@
 	 <version>${icu4j.version}</version>
       </dependency>
    </dependencies>
+
+   <repositories>
+      <!-- for deployment on gitlab package repository -->
+      <repository>
+         <id>gitlab-maven</id>
+         <url>${distribution.url}</url>
+      </repository>
+   </repositories>
+
+
+   <!-- get the build artifacts into the gitlab maven package registry -->
+   <distributionManagement>
+     <repository>
+       <id>gitlab-maven</id>
+       <url>${distribution.url}</url>
+     </repository>
+     <snapshotRepository>
+       <id>gitlab-maven</id>
+       <url>${distribution.url}</url>
+     </snapshotRepository>
+   </distributionManagement>
 
    <modules>
       <module>bindings</module>
